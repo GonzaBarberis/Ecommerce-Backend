@@ -1,0 +1,45 @@
+<div class="nav">
+
+  
+  <div class="items">
+    <% if (nombre) { %>
+      <p class="item name"><b>¡Hola <%- nombre %>!</b></p>
+      <p class="item"><i class="fa-sharp fa-solid fa-truck-fast"></i> Enviar a: Argentina </p>
+      <p class="item"><i class="fa-sharp fa-regular fa-heart"></i> Lista de deseos</p>  
+      <a class="item salir" href="/logout"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></i> Salir</a>
+    <%} else { %>
+      <a class="item" href="/register"><i class="fa-sharp fa-solid fa-user-plus"></i></i> Registrarse</a>
+      <p class="item"><i class="fa-sharp fa-solid fa-truck-fast"></i> Enviar a: Argentina </p>
+      <p class="item"><i class="fa-sharp fa-regular fa-heart"></i> Lista de deseos</p>    
+      <a class="item inicio" href="/login"><i class="fa-solid fa-user"></i> Iniciar Sesión</a>
+    <% } %>
+    
+  </div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-xxl">
+      <img src="/img/Logo.jpg" height="60px" class="imagenav">
+      <a class="navbar-brand" href="/" style="font-family: 'Montserrat'; font-size: 22px;">Leo Mattioli | Mates</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 18px;" aria-current="page" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 18px;" href="/shop">Comprar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 18px;" href="/about">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 18px;" href="/cart">Carrito</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

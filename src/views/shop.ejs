@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Mattioli - Shop</title>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+    <%- include('partials/navigation') %>
+
+    <header class="container d-flex justify-content-start align-items-center">
+        <div class="contenedorTit">
+            <h1 class="titulo1">CATÁLOGO</h1>
+        </div>
+        <div class="filtros">
+
+        </div>
+        <div class="separador">
+
+        </div>
+        <div class="grilla">
+            <% if (data) { %>
+                <% for (let i = 0; i < data.length; i++) { %>
+                    <div class="grid-item">
+                        <h1 class="tituloprod"><%= data[i].nombre %></h1>
+                        <h3 class="cateprod"><i><%= data[i].categ %></i></h3>
+                        <h2 class="precioprod"><b>$<%= data[i].precio %></b></h2>
+                        <img class="image" src=<%= data[i].imagen %>>
+                        <a class="boton" href="/buy/<%= data[i].id %>"><i class="fa-solid fa-eye" style="font-size: 15px; margin-right: 5px;"></i>Ver</a>
+                    </div>
+                <% } %>
+            <% } %>
+            
+        </div>
+
+
+    </header>
+
+
+    
+    <%- include('partials/footer') %>
+</body>
+</html>

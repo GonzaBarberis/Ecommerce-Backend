@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Mattioli - Login</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+
+    <header class="container d-flex flex-column justify-content-start align-items-center" style="height: 70vh;">
+        <div class="contenedorTit" style="background-color: white; height: 150px;width: 90%;display: flex;justify-content: center;align-items: center; margin-bottom: 40px;">
+            <h1 class="titulo1" style="font-size: 50px">LOGUEO DE USUARIO</h1>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/login" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" class="form-control" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" name="password" id="contraseña" autocomplete="off" placeholder="Contraseña" class="form-control" required>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn mt-3" style="background-color: #75a147; color: white;">Entrar</button>
+                        </div>
+                        <% if (error) { %>
+                            <div class="d-flex justify-content-center">
+                                <h3 class="mt-4" style="color: red;"><b>
+                                    <%- error %>
+                                    </b>
+                                </h3>
+                            </div>
+                            
+                        <% } %>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    
+    <%- include('partials/footer') %>
+</body>
+</html>
