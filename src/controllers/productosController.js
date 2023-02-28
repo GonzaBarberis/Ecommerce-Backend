@@ -28,14 +28,6 @@ controller.list = (req, res) =>{
             , nombre: req.session.name})
         })
     })
-
-    // if (req.session.entro == true){
-        
-    // }
-    // else{
-    //     //res.redirect('/')
-    //     res.render('login', {error:''})
-    // }
     
 }
 
@@ -148,6 +140,47 @@ controller.logout = (req, res) =>{
     }
     else{
         res.redirect('/login')
+    }
+}
+
+
+controller.purchase = (req, res) =>{
+
+    if (req.session.entro == true){
+        let random = Math.random() * 9999999
+
+        const fecha = new Date();
+        let dia = fecha.getDate()
+        let mes = fecha.getMonth() + 1
+        let año = fecha.getFullYear()
+
+        let tiempo = año + '-' + mes + '-' + dia 
+
+        const id = req.params.id
+
+        req.getConnection((err, conn)=>{
+            conn.query('SELECT * FROM productos WHERE id = ?',[id],(err, rows)=>{
+                if (err){
+                    res.json(err); //o next(err)
+                }
+                else{
+                    info = rows[0]
+                    req.getConnection((err, conn)=>{
+                        conn.query(`INSERT INTO ventas set usuario = '${req.session.name}', producto = '${rows[0].nombre}', numOrden = ${Math.floor(random)}, fecha = '${tiempo}'`,(err, rows)=>{
+                            if (err){
+                                res.json(err); //o next(err)
+                            }
+                            else{
+                                res.render('purchase', {error:'',nombre: req.session.name, orden: Math.floor(random), data: info})
+                            }
+                        })
+                    }) 
+                }
+            })
+        }) 
+    }
+    else{
+        res.render("login", {error : 'Debes iniciar sesión para comprar.',nombre: req.session.name})
     }
 }
 

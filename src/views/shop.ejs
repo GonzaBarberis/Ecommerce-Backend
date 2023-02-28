@@ -15,8 +15,23 @@
         <div class="contenedorTit">
             <h1 class="titulo1">CATÁLOGO</h1>
         </div>
-        <div class="filtros">
-
+        <div class="contenedor-filtro">
+            <form action="/order" method="get" class="filtros">
+                <div class="filtroCate">
+                    <label>Categoría: </label>
+                    <select>
+                        <option>Mates</option>
+                        <option>Termos</option>
+                        <option>Bombillas</option>
+                        <option>Bolsos</option>
+                        <option>Yerbas</option>
+                    </select>
+                </div>
+                <div class="filtroPrecio">
+                    <label>Precio: Min</label><input type="number"><label style="margin-left: 6px;">Max</label><input type="number">
+                </div>
+                <input type="submit" value="Buscar" class="botonFiltro">
+            </form>
         </div>
         <div class="separador">
 

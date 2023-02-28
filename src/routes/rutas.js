@@ -21,6 +21,8 @@ router.post('/register', productosContoller.saveUser)
 
 router.get('/logout', productosContoller.logout)
 
+router.get('/purchase/:id', productosContoller.purchase)
+
 // router.post('/buyed', productosContoller.buyed)
 
 module.exports = router;

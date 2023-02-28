@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Mattioli - Gracias por tu compra</title>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/purchase.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('partials/navigation') %>
+
+    <header class="container d-flex justify-content-start align-items-center" style="height: 85vh;">
+        <div class="caja">
+            <h1>COMPRA EXITOSA</h1>
+            <h3>Numero de orden #<%= orden %></h3>
+            <h3>Producto: <%- data.nombre %></h3>
+        </div>
+    </header>
+
+    
+    
+    <%- include('partials/footer') %>
+</body>
+</html>

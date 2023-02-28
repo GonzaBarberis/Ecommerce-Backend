@@ -12,7 +12,7 @@
 <body>
     <%- include('partials/navigation') %>
 
-    <header class="container vh-50 d-flex justify-content-start align-items-center">
+    <header class="container d-flex justify-content-start align-items-center" style="height: 85vh;">
         
         <div class="caja">
             <div class="containerImagen">
@@ -26,25 +26,91 @@
                 </div>
                 <h1>$<%= data.precio %></h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisiam minus praesentium dolore recusandae voluptates rem facilis, mollitia commodi quam neque repudiandae nesciunt ipsum architecto vero?</p>
-                <div class="cantidad">
+                <!-- <div class="cantidad">
                     <label>Cantidad: </label> <input type="number" class="inputCant">
+                </div> -->
+                <div class="cantidad">
+                    <label>Cantidad: </label> 
+                    <div class="sumadores">
+                        <button class="restar mod">-</button>
+                        <div class="totalprod">
+                            0
+                        </div>
+                        <button class="sumar mod">+</button>
+                    </div>
                 </div>
-                <form action="">
+                
+                <div class="envio">
+                    <h3><i>Envío gratis</i></h3>
+                </div>
+                <!-- <form action=""> -->
                     <div class="botones">
-                        <button type="submit" onclick="mostrar()" class="comprar">Comprar</button> 
+                        <button onclick="confirmar('<%= data.id %>')" class="comprar">Comprar</button> 
                         <a onclick="window.location.href = '/shop'" class="cancel">Volver</a>
                     </div>
-                </form>              
+                <!-- </form>               -->
             </div>
         </div>
     </header>
 
     <script>
-        const mostrar = () =>{
-            let cantidad = document.querySelector('.inputCant').value 
-            alert(cantidad)
-        }
+        let cant = 0
+        const sumarProd = () =>{
+            console.log(cant)
+            const contenedor = document.querySelector(".totalprod");
 
+            let sumar = document.querySelector('.sumar')                    
+            let restar = document.querySelector('.restar')
+
+            sumar.addEventListener("click", ()=>{
+                cant = cant + 1
+                nuevoContenido = `<p>${cant}</p>`;
+                contenedor.innerHTML = nuevoContenido.trim()
+            })
+
+            restar.addEventListener("click", ()=>{
+                if (cant > 0){
+                    cant = cant - 1
+                    
+                }
+                nuevoContenido = `<p>${cant}</p>`;
+                contenedor.innerHTML = nuevoContenido.trim()
+                
+            })
+
+
+        }   
+
+        sumarProd()
+        
+
+
+
+        function confirmar(id) { 
+            // let precio = document.querySelector('.inputCant')
+
+            if (cant <= 0){
+                Swal.fire('Debes indicar una cantidad antes de comprar.')
+            }
+            else{
+                Swal.fire({
+                title: '¿Pasar a finalizar compra?',
+                text: `Comprarás ${cant} productos.`,
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#75a147',
+                cancelButtonColor: '#2b2d42',
+                confirmButtonText: 'Comprar',cancelButtonText: 'Volver'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href='/purchase/' + id
+                }
+                })
+            } 
+            }
+
+
+            
     </script>
 
 

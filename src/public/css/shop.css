@@ -64,11 +64,32 @@
 }
 
 .filtros{
-    width: 90%;
+    height: 80px;
     border: 1px solid lightgray;
     border-radius: 7px;
-    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.contenedor-filtro{
+    width: 90%;
+}
+
+
+.filtroPrecio input{
+    width: 100px;
+    margin-left: 10px;
+    padding: 6px;
+}
+
+.filtroCate select{
+    width: 100px;
+    margin-left: 10px;
+    padding: 6px;
+    cursor: pointer;
+}
+
 
 /* .separador{
     width:80%;
@@ -76,6 +97,19 @@
     height: 60px;
 } */
 
+.botonFiltro{
+    background-color: rgb(212, 212, 212);
+    height: 50px;
+    width: 100px;
+    border: none;
+    transition: background 0.5s;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+.botonFiltro:hover{
+    background-color: rgb(170, 170, 170);
+}
 
 
 .image{
@@ -133,3 +167,4 @@
     transform:translateY(3px);
     background-color: #608539;
 }
+

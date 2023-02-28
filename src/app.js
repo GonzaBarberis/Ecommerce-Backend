@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const mysql = require('mysql')
 const myConnection = require('express-myconnection')
 const session = require('express-session')
+const Swal = require('sweetalert2')
 
 const Rutas =  require('./routes/rutas.js') ;
 
