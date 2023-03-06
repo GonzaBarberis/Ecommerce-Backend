@@ -1,5 +1,5 @@
 ---
-# Ecommerce-Backend "Leo Mattioli"
+# 🛒🧉 Ecommerce-Backend "Leo Mattioli"
 Proyecto tienda de productos materos completo, centrado en Backend, realizado principalmente con **NodeJS y MySQL**
 
 
@@ -7,18 +7,18 @@ Proyecto tienda de productos materos completo, centrado en Backend, realizado pr
 
 ## Tecnologías utilizadas
 
-### Frontend
+### 🖌️ Frontend
 - HTML5
 - CSS3 Puro
 
-### Backend
+### 👨🏼‍💻 Backend
 - Javascript (Node.JS +  Express.JS)
 - EJS (Motor de plantilla)
 
-### Base de Datos
+### 🧮 Base de Datos
 - MySQL
 
-### Encriptación 
+### 🔑 Encriptación 
 - Bcrypt
 
 
