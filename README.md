@@ -1,6 +1,9 @@
 ---
-# Ecommerce-Backend
-Proyecto de tienda e-commerce completo, centrado en Backend, realizado principalmente con **NodeJS y MySQL**
+# Ecommerce-Backend "Leo Mattioli"
+Proyecto tienda de productos materos completo, centrado en Backend, realizado principalmente con **NodeJS y MySQL**
+
+
+<img src="./src/public/img/Logo.jpg" height="450"> 
 
 ## Tecnologías utilizadas
 
@@ -45,7 +48,4 @@ Proyecto de tienda e-commerce completo, centrado en Backend, realizado principal
 + Logeo de usuario
 
 <img src="https://co-well.vn/wp-content/uploads/2019/12/why-ecommerce-is-important-with-business.png"> 
-
-
-## Principales características
 
